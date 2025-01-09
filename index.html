@@ -23,6 +23,11 @@
 }
       body {
         margin: 0;
+        
+        
+      }
+      
+      .body__container{
         padding: 20px;
         font-family: Arial, sans-serif;
         background-image: url("images/background.png");
@@ -31,6 +36,8 @@
         flex-direction: column;
         gap: 28px;
         box-sizing: border-box;
+        max-width: 1440px;
+        margin: auto;
       }
 
       .element {
@@ -38,7 +45,7 @@
       }
 
       /* Withdraw Section */
-      .withdraw {
+      .balance {
         background-color: white;
         max-width: 453px;
         margin: auto;
@@ -46,7 +53,7 @@
         padding: 12px;
       }
 
-      .withdraw_inner-conteiner {
+      .balance__inner-conteiner {
         border-radius: 4px;
         overflow: hidden;
         display: flex;
@@ -57,19 +64,19 @@
         justify-content: space-between;
       }
 
-      .withdraw__left__container {
+      .balance__left__container {
         display: flex;
         align-items: center;
         gap: 8px;
       }
 
-      .withdraw__left__container img {
+      .balance__left__container img {
         width: 50px;
         height: 50px;
         object-fit: cover;
       }
 
-      .withdraw__info h5 {
+      .balance__info h5 {
         margin: 0;
         font-size: 12px;
         text-transform: uppercase;
@@ -77,14 +84,14 @@
         color: #ffffff80;
       }
 
-      .withdraw__info p {
+      .balance__info p {
         margin: 5px 0 0;
         font-size: 24px;
         font-weight: 700;
         color: #fff;
       }
 
-      .balance {
+      .balance__button {
         margin-left: auto;
         padding: 14px 20px;
         border: none;
@@ -99,7 +106,7 @@
         text-transform: capitalize;
       }
 
-      .balance:hover {
+      .balance__button:hover {
         background: #bebebe;
       }
 
@@ -219,7 +226,7 @@
       }
 
       .balance {
-        background-color: #1a3cac;
+        background-color: white;
       }
 
       .faq {
@@ -230,23 +237,184 @@
         width: 100%;
         height: auto;
       }
+
+      /* || withdraw */
+
+      .withdraw {
+        padding:24px;
+        display:flex;
+        background-color: white;
+        justify-content: center;
+        align-items:center;
+        gap: 15px;
+
+        max-width: 708px;
+        border-radius: 12px;
+        margin: auto;
+      }
+
+      .withdraw__balance{
+        padding: 16px;
+        padding-right: 40px;
+        display:flex;
+        gap: 8px;
+        border: 1px solid #000000;
+        border-radius:16px;
+        box-shadow: 
+        0px 4px 9px rgba(0, 0, 0, 0.18), 
+        0px 17px 17px rgba(0, 0, 0, 0.16), 
+        0px 38px 23px rgba(0, 0, 0, 0.09), 
+        0px 67px 27px rgba(0, 0, 0, 0.03), 
+        0px 105px 30px rgba(0, 0, 0, 0.00), 
+        inset 2px 2px 5.3px rgba(0, 0, 0, 0.27);
+      }
+
+      .withdraw__button{
+        padding: 14px 24PX;
+        border-radius: 34px;
+        margin-left: auto;
+        border: none;
+        color:white;
+        background-color: var(--primary-color);
+        font-weight: 700;
+        font-size:14px;
+        line-height: 20px;
+      }
+
+      .withdraw__info {
+        font-size: 20px;
+        font-weight: 900;
+        
+      }
+
+      .withdraw__balance img {
+        width: 20px;
+      }
+
+      .withdraw__balance {
+        font-weight: 700;
+        font-size: 20px;
+      }
+
+      /* accordion */
+
+
+.accordion-container {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Title */
+.accordion-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+    align-items: center;
+}
+
+/* Tabs */
+.accordion-tabs {
+  display: flex;
+  margin-bottom: 16px;
+  justify-content: flex-start;
+  margin-top: 30px;
+}
+
+.accordion-tab {
+  padding: 10px;
+  background: #f5f5f5;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.accordion-tab.active {
+  background: #ffffff;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Accordion Items */
+.accordion-item {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.accordion-header {
+  width: 100%;
+  padding: 15px;
+  background: #f9f9f9;
+  border: none;
+  text-align: left;
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-header:hover {
+  background: #f2f2f2;
+}
+
+.accordion-icon {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.accordion-item.active .accordion-icon {
+  transform: rotate(45deg); /* Turns + to x */
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 15px;
+  background: #ffffff;
+  line-height: 30px;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.accordion-content p {
+  margin: 10px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 150px;
+  padding: 15px;
+}
+
     </style>
   </head>
   <body>
+    <div class="body__container">
     <div class="element banner">
       <img src="./images/banner.png" alt="banner" />
     </div>
 
-    <div class="element withdraw">
-      <div class="withdraw_inner-conteiner">
-        <div class="withdraw__left__container">
+    <div class="element balance">
+      <div class="balance__inner-conteiner">
+        <div class="balance__left__container">
           <img src="./images/withdraw_icon.png" alt="withdraw" />
-          <div class="withdraw__info">
+          <div class="balance__info">
             <h5>my balance</h5>
             <p>12 spins</p>
           </div>
         </div>
-        <button class="balance">collect</button>
+        <button class="balance__button">collect</button>
       </div>
     </div>
 
@@ -287,9 +455,63 @@
       </div>
     </div>
 </div>
-    <div class="element withdraw">4</div>
-    <div class="element faq">5</div>
+    <div class="element withdraw">
+        <span class="withdraw__info">Total number of Freespins </span><span class="withdraw__balance"><img src="./images/flash.png" /> 12 flash</span><button class="withdraw__button">withdraw</button></span>
+    </div>
+    
 
+    <div class="element accordion-container">
+        <h2 class="accordion-title">Promo Rules <button id="accordion__toggler">toggle</button></h2>
+        <div class="accordion-tabs">
+          <button class="accordion-tab active">Rules</button>
+          <button class="accordion-tab">Additional Rules</button>
+        </div>
+        <div class="accordion">
+          <div class="accordion-item">
+            <button class="accordion-header">
+              What Are Wagering Requirements?
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Wagering requirements specify how many times you need to bet the bonus amount before
+                you can withdraw your winnings. For example, if you receive a $100 bonus with a 30x
+                wagering requirement, you must wager $3,000 ($100 x 30) before you can cash out any
+                bonus-related winnings.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">
+              Can I Withdraw My Bonus Immediately?
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              <p>No, bonuses usually come with conditions such as wagering requirements.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">
+              Are There Any Restrictions on Games for the Welcome Bonus?
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Some games may be restricted from contributing to the wagering requirements.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">
+              Can I Use the Welcome Bonus on Mobile?
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Yes, the welcome bonus is typically available on both desktop and mobile platforms.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+</div>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const leaderboardData = [
@@ -318,6 +540,48 @@
 
           tbody.appendChild(row);
         });
+
+
+        const accordionHeaders = document.querySelectorAll(".accordion-header");
+
+  accordionHeaders.forEach((header) => {
+    header.addEventListener("click", () => {
+      const accordionItem = header.parentElement;
+
+      // Close other open items
+      document.querySelectorAll(".accordion-item.active").forEach((item) => {
+        if (item !== accordionItem) {
+          item.classList.remove("active");
+        }
+      });
+
+      // Toggle the current item
+      accordionItem.classList.toggle("active");
+    });
+  });
+
+  // Tabs functionality (if needed)
+  const tabs = document.querySelectorAll(".accordion-tab");
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      // Remove active from all tabs
+      tabs.forEach((t) => t.classList.remove("active"));
+
+      // Add active to the clicked tab
+      tab.classList.add("active");
+    });
+  });
+
+const accordionToggler = document.getElementById("accordion__toggler");
+const accordionTabs = document.querySelector(".accordion-tabs");
+const accordion = document.querySelector(".accordion");
+
+accordionToggler.addEventListener("click", () => {
+    const isHidden = accordionTabs.style.display === "none";
+    accordionTabs.style.display = isHidden ? "flex" : "none";
+    accordion.style.display = isHidden ? "block" : "none";
+    accordionToggler.textContent = isHidden ? "close" : "open";
+});
       });
     </script>
   </body>
