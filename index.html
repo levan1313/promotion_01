@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+    <style>
+      :root {
+        --primary-color: #000000;
+        --secondary-color: #0d7b3e;
+        --tertiary-color: #00141E;
+        --quaternary-color: #d35400;
+        --quinary-color: #e74c3c;
+        --senary-color: #c0392b;
+        --septenary-color: #ecf0f1;
+        --octonary-color: #bdc3c7;
+        --nonary-color: #95a5a6;
+        --denary-color: #7f8c8d;
+      }
+      * {
+  box-sizing: border-box;
+}
+      body {
+        margin: 0;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        background-image: url("images/background.png");
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+        box-sizing: border-box;
+      }
+
+      .element {
+        width: 100%;
+      }
+
+      /* Withdraw Section */
+      .withdraw {
+        background-color: white;
+        max-width: 453px;
+        margin: auto;
+        border-radius: 8px;
+        padding: 12px;
+      }
+
+      .withdraw_inner-conteiner {
+        border-radius: 4px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        background-color: var(--primary-color);
+        padding: 19px 16px;
+        color: white;
+        justify-content: space-between;
+      }
+
+      .withdraw__left__container {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .withdraw__left__container img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+      }
+
+      .withdraw__info h5 {
+        margin: 0;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #ffffff80;
+      }
+
+      .withdraw__info p {
+        margin: 5px 0 0;
+        font-size: 24px;
+        font-weight: 700;
+        color: #fff;
+      }
+
+      .balance {
+        margin-left: auto;
+        padding: 14px 20px;
+        border: none;
+        border-radius: 34px;
+        background: white;
+        color: var(--primary-color);
+        font-weight: 700;
+        font-size: 14px;
+        cursor: pointer;
+        width: 100%;
+        max-width: 165px;
+        text-transform: capitalize;
+      }
+
+      .balance:hover {
+        background: #bebebe;
+      }
+
+      /* Game Section */
+      .game {
+        overflow: hidden;
+        padding-top: 56.25%; /* 16:9 */
+        position: relative;
+        margin: 0px 40px;
+      }
+
+      .game iframe {
+        border: 0;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+
+      /* Leaderboard Section */
+
+      .leaderboard-wrapper{
+        padding:0 40px;
+      }
+
+      .leaderboard {
+        background-color: #062733;
+        padding:0 24px 32px 24px;
+        box-sizing: border-box;
+        border-radius:10px;
+        max-width: 100%;
+      }
+
+      .leaderboard__header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        max-width: 600px;
+        margin: auto;
+        margin-bottom: 20px;
+        border: 1px solid var(--secondary-color);
+        border-top: none;
+        border-bottom-right-radius: 12px;
+        border-bottom-left-radius: 12px;
+        padding: 24px;
+      }
+
+      .leaderboard__header img {
+        width: 50px;
+      }
+
+      .leaderboard__header h2 {
+        color: white;
+        font-size: 24px;
+        margin: 0;
+      }
+
+      .leaderboard__table-wrapper {
+        height: 200px;
+        overflow-y: auto;
+        padding-right: 20px;
+      }
+        
+      /* wrapper's scroll */
+
+        /* Scrollbar styles for WebKit browsers */
+        .leaderboard__table-wrapper::-webkit-scrollbar {
+        width: 10px; /* Set the scrollbar width */
+        }
+
+        .leaderboard__table-wrapper::-webkit-scrollbar-thumb {
+        background-color: black; /* Scrollbar thumb color */
+        border-radius: 10px; /* Rounded corners for the scrollbar */
+        }
+
+        .leaderboard__table-wrapper::-webkit-scrollbar-track {
+        background-color: transparent; /* Optional: Track background color */
+        }
+
+
+      .leaderboard table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .leaderboard th,
+      .leaderboard td {
+        padding: 8px;
+        text-align: left;
+        background-color: var(--tertiary-color);
+        color:white;
+        margin: 10px 0; /* Adds vertical spacing between rows */
+        flex: 1;
+      }
+
+      .leaderboard tr {
+        display: flex; /* Flex allows margin spacing to work */
+  justify-content: space-between; /* Align cells */
+
+      }
+
+      .leaderboard th {
+        background-color: #062733;
+        color: white;
+        position: sticky;
+        top: 0;
+        justify-content: stretch;
+        align-items: stretch;
+      }
+
+      .leaderboard tfoot td {
+        background-color: var(--secondary-color);
+        position: sticky;
+        bottom: 0;
+      }
+
+      .balance {
+        background-color: #1a3cac;
+      }
+
+      .faq {
+        background-color: #705555;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="element banner">
+      <img src="/images/banner.png" alt="banner" />
+    </div>
+
+    <div class="element withdraw">
+      <div class="withdraw_inner-conteiner">
+        <div class="withdraw__left__container">
+          <img src="/images/withdraw_icon.png" alt="withdraw" />
+          <div class="withdraw__info">
+            <h5>my balance</h5>
+            <p>12 spins</p>
+          </div>
+        </div>
+        <button class="balance">collect</button>
+      </div>
+    </div>
+
+    <div class="game">
+      <iframe
+        width="560"
+        height="315"
+        src="https://wheel-of-fortune-delta.vercel.app"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        loading="lazy"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <div class="leaderboard-wrapper">
+    <div class="element leaderboard">
+      <div class="leaderboard__header">
+        <img src="images/leaderboard_icon.png" alt="leaderboard" />
+        <h2>Leaderboard</h2>
+      </div>
+      <div class="leaderboard__table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Name</th>
+              <th>Score</th>
+              <th>Country</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+          <tfoot>
+            <tr>
+              <td colspan="4">End of Leaderboard</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+</div>
+    <div class="element withdraw">4</div>
+    <div class="element faq">5</div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const leaderboardData = [
+          { rank: 1, name: "John Doe", score: 1500, country: "USA" },
+          { rank: 2, name: "Jane Smith", score: 1400, country: "Canada" },
+          { rank: 3, name: "Sam Brown", score: 1300, country: "UK" },
+          { rank: 4, name: "Lisa White", score: 1200, country: "Australia" },
+          {
+            rank: 5,
+            name: "Michael Green",
+            score: 1100,
+            country: "New Zealand",
+          },
+        ];
+
+        const tbody = document.querySelector(".leaderboard tbody");
+
+        leaderboardData.forEach((data) => {
+          const row = document.createElement("tr");
+
+          Object.values(data).forEach((value) => {
+            const cell = document.createElement("td");
+            cell.textContent = value;
+            row.appendChild(cell);
+          });
+
+          tbody.appendChild(row);
+        });
+      });
+    </script>
+  </body>
+</html>
